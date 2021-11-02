@@ -20,10 +20,17 @@ class MainActivity : ComponentActivity() {
             COV_BasicsCodelapTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
-                    Greeting("Android")
+                    MyApp()
                 }
             }
         }
+    }
+}
+
+@Composable
+private fun MyApp() {
+    Surface(color = MaterialTheme.colors.background) {
+        Greeting("Android")
     }
 }
 
@@ -39,6 +46,7 @@ fun Greeting(name: String) {
 @Composable
 fun DefaultPreview() {
     COV_BasicsCodelapTheme {
-        Greeting("Android")
+        MyApp()
     }
 }
+

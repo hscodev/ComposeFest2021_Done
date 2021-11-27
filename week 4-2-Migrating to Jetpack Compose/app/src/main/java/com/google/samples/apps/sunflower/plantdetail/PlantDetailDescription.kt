@@ -16,6 +16,7 @@
 
 package com.google.samples.apps.sunflower.plantdetail
 
+import android.content.res.Configuration
 import android.text.method.LinkMovementMethod
 import android.widget.TextView
 import androidx.compose.foundation.layout.Column
@@ -136,7 +137,7 @@ private fun PlantDescription(description: String) {
     )
 }
 
-@Preview
+@Preview(uiMode = Configuration.UI_MODE_NIGHT_YES)
 @Composable
 private fun PlantDescriptionPreview() {
     MaterialTheme {

@@ -1,9 +1,9 @@
 package com.example.compose.rally
 
-import androidx.compose.ui.test.assertIsDisplayed
+import androidx.compose.ui.test.assertIsSelected
 import androidx.compose.ui.test.junit4.createComposeRule
-import androidx.compose.ui.test.onNodeWithText
-import com.example.compose.rally.ui.overview.OverviewBody
+import androidx.compose.ui.test.onNodeWithContentDescription
+import androidx.compose.ui.test.performClick
 import org.junit.Rule
 import org.junit.Test
 
@@ -13,13 +13,14 @@ class TopAppBarTest {
     val composeTestRule = createComposeRule()
 
     @Test
-    fun overviewScreen_alertsDisplayed() {
+    fun rallyTopAppBarTest_billsTabSelected() {
         composeTestRule.setContent {
-            OverviewBody()
+            RallyApp()
         }
 
         composeTestRule
-            .onNodeWithText("Alerts")
-            .assertIsDisplayed()
+            .onNodeWithContentDescription(RallyScreen.Bills.name)
+            .performClick()
+            .assertIsSelected()
     }
 }
